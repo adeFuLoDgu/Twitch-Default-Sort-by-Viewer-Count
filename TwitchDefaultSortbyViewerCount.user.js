@@ -13,7 +13,6 @@
 
 (function() {
     'use strict';
-    // default Sort on Game Directory from High to Low
     let url = window.location.href;
     if(url.indexOf("?sort=VIEWER_COUNT") == -1) {
         url += "?sort=VIEWER_COUNT";
