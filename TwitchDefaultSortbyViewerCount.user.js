@@ -15,7 +15,7 @@
     "use strict";
     setInterval(() => {
         let url = window.location.href;
-        if(url.indexOf("/directory") != -1 && url.indexOf("?sort=") == -1 && url.indexOf("/videos") == -1 && url.indexOf("/clips") == -1) {
+        if(url.indexOf("/directory") != -1 && url.indexOf("?sort=") == -1 && url.indexOf("/videos") == -1 && url.indexOf("/clips") == -1 && url.indexOf("/following") == -1) {
             url += "?sort=VIEWER_COUNT";
             window.location.href = url;
         }
