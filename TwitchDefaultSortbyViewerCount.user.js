@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Twitch Default Sort by Viewer Count
 // @namespace   https://github.com/adeFuLoDgu/Twitch-Default-Sort-by-Viewer-Count
-// @version     0.3
+// @version     0.4
 // @description Set default sort to viewer count on Twitch directory pages.
 // @author      adeFuLoDgu
 // @match     	*://*.twitch.tv/*
