@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Twitch Default Sort by Viewer Count
 // @namespace   https://github.com/adeFuLoDgu/Twitch-Default-Sort-by-Viewer-Count
-// @version     0.4
+// @version     0.5
 // @description Set default sort to viewer count on Twitch directory pages.
 // @author      adeFuLoDgu
 // @match     	*://*.twitch.tv/*
@@ -13,11 +13,19 @@
 
 (function() {
     "use strict";
+
     setInterval(() => {
-        let url = window.location.href;
-        if(url.indexOf("/directory") != -1 && url.indexOf("?sort=") == -1 && url.indexOf("/videos") == -1 && url.indexOf("/clips") == -1 && url.indexOf("/following") == -1) {
-            url += "?sort=VIEWER_COUNT";
-            window.location.href = url;
+        const url = new URL(window.location.href);
+
+        if (
+            url.pathname.includes("/directory") &&
+            !url.searchParams.has("sort") &&
+            !url.pathname.includes("/videos") &&
+            !url.pathname.includes("/clips") &&
+            !url.pathname.includes("/following")
+        ) {
+            url.searchParams.set("sort", "VIEWER_COUNT");
+            window.location.href = url.toString();
         }
     }, 1000);
 })();
